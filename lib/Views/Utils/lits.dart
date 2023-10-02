@@ -105,3 +105,5 @@ List<Map<String, dynamic>> imagelist = [
     "category": "Funny",
   },
 ];
+
+List addcategory = [];

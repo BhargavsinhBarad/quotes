@@ -14,7 +14,7 @@ class home_page extends StatefulWidget {
 }
 
 class _home_pageState extends State<home_page> {
-  int? select;
+  int select = -1;
   String? sname;
   ByteData? images;
 
@@ -27,11 +27,15 @@ class _home_pageState extends State<home_page> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          if (select! >= 0) {
+          if (select >= 0) {
             Uint8List img = images!.buffer.asUint8List();
 
             category Category = category(name: sname!, image: img);
             int? res = await DB_helper.db.insetcategory(data: Category);
+
+            Get.snackbar("abc", "done");
+          } else {
+            Get.snackbar("aaa", "xyz");
           }
         },
         child: Text("Add"),

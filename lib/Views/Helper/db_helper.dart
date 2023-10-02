@@ -19,11 +19,20 @@ class DB_helper {
     });
   }
 
-  Future<int?> insetcategory({required category data}) async {
+  Future<int> insetcategory({required category data}) async {
     await initdb();
     String query = "INSERT INTO category(name,image) VALUES(?,?)";
     List args = [data.name, data.image];
     int? res = await database?.rawInsert(query, args);
     return res!;
+  }
+
+  Future<List<category>> viewcategory() async {
+    await initdb();
+    String query = "SELECT * FROM  category";
+    List<Map<String, dynamic>> data = await database!.rawQuery(query);
+
+    List<category> alldata = data.map((e) => category.sql(data: e)).toList();
+    return alldata;
   }
 }
