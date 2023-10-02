@@ -106,4 +106,4 @@ List<Map<String, dynamic>> imagelist = [
   },
 ];
 
-List addcategory = [];
+List<Map<String, dynamic>> addcategory = [];

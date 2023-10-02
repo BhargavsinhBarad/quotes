@@ -38,6 +38,8 @@ dependencies:
   sqflite: ^2.3.0
   path: ^1.8.3
   get: ^4.6.6
+  introduction_screen: ^3.1.11
+  shared_preferences: ^2.2.0
 
 dev_dependencies:
   flutter_test:
@@ -63,7 +65,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - lib/Views/Utils/Assets/
+    - lib/Views/Utils/Json/quotes.json
     - lib/Views/Utils/Assets/Images/
   #   - images/a_dot_ham.jpeg
 
